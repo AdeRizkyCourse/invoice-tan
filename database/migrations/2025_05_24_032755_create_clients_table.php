@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama', length: 30);
             $table->longText('alamat');
             $table->string('no_hp', length: 15);
-            $table->string('email', length: 25);
+            $table->string('email', length: 30);
             $table->timestamps();
         });
     }

@@ -33,29 +33,6 @@
 
 </head>
 <body>
-    <!-- ✅ Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">InvoiceApp</a>
-            <form action="{{ route('logout') }}" method="POST">
-    @csrf
-    <button type="submit" class="btn btn-danger">Logout</button>
-</form>
-
-        </div>
-    </nav>
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <!-- ✅ Sidebar -->
-            <div class="col-md-2 sidebar">
-                <a href="{{ route('dashboard') }}">Dashboard</a>
-                <a href="{{ route('clients.index') }}">🧑‍💼 Klien</a>
-                <a href="{{ route('users.index') }}">👤 Pengguna</a>
-                <a href="{{ route('invoices.index') }}">🧾 Invoice</a>
-            </div>
-
             <!-- ✅ Main Content -->
             <div class="col-md-10 p-4">
                 @yield('content')
@@ -70,7 +47,7 @@
 
     <!-- ✅ Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     @stack('scripts')
 
 </body>

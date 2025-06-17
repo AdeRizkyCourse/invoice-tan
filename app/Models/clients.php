@@ -11,6 +11,6 @@ class clients extends Model
 
     public function invoices()
     {
-        return $this->hasMany(invoices::class, 'id_client');
+        return $this->hasMany(invoices::class, 'id');
     }
 }

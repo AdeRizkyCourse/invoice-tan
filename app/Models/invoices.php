@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class invoices extends Model
 {
     protected $table = 'invoices';
-    protected $fillable = ['no_invoice', 'id_client', 'id_user', 'total_harga', 'status'];
+    protected $fillable = 
+    [
+    'no_invoice',
+    'id_client',
+    'id_user',
+    'total_harga',
+    'status'
+    ];
 
     public function client()
     {
