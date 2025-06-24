@@ -18,7 +18,7 @@ class invoices extends Model
 
     public function client()
     {
-        return $this->belongsTo(Clients::class, 'id_client');
+        return $this->belongsTo(clients::class, 'id_client');
     }
 
     public function user()

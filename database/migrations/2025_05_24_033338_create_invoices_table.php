@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('no_invoice', length: 20);
+            $table->string('no_invoice', length: 20)->unique();
             $table->foreignId('id_client')->constrained('clients')->onDelete('cascade');
-            $table->foreignId('id_user')->constrained('clients')->onDelete('cascade');
+            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->decimal('total_harga', total: 12, places: 2);
             $table->enum('status', ['belum terbayar', 'terbayar']);
             $table->timestamps();

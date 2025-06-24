@@ -13,7 +13,7 @@ class UserController extends Controller
     //  */
     public function index()
     {
-        $title = 'Users';
+        $title = 'users';
         $listData = User::all();
         return view('user.index', compact('listData', 'title'));
     }
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $title = 'Users';
+        $title = 'users';
         $listData = User::all();
         return view('user.create', compact('listData', 'title'));
     }
@@ -53,7 +53,7 @@ class UserController extends Controller
     public function show(string $id)
     {
         //
-         $title = 'Users';
+         $title = 'users';
          $data = User::with('invoices')->find($id);
 
         return view('user.show', compact('data', 'title'));
@@ -64,7 +64,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $title = 'Users';
+        $title = 'users';
         $data = User::find($id);
 
         return view('user.edit', compact('data','title'));
@@ -112,7 +112,7 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         // Hapus data dari database
-        user::find($id)->delete();
+        User::find($id)->delete();
         // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('users.index')->with('success', 'Data berhasil dihapus');
     }

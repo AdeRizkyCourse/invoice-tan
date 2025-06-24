@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+      public function invoices()
+    {
+        return $this->hasMany(invoices::class, 'id_user');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,9 +49,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-     public function invoices()
-    {
-        return $this->hasMany(invoices::class, 'id');
     }
 }

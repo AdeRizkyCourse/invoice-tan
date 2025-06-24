@@ -29,7 +29,7 @@ class DashboardController extends Controller
     {
         $title = 'Tambah Invoice';
         $clients = clients::all(); // Mengambil data client untuk dropdown
-        $users = User::all(); // Mengambil data user untuk dropdown
+        $users = users::all(); // Mengambil data user untuk dropdown
         return view('invoice.create', compact('title', 'clients', 'users'));
     }
 
@@ -81,7 +81,7 @@ class DashboardController extends Controller
         $title = 'Invoice';
         $data = invoices::with('client', 'user', 'items')->find($id);
         $clients = Clients::all(); 
-        $users = User::all();
+        $users = users::all();
 
         return view('invoice.edit', compact('data', 'title', 'clients', 'users'));
     }
