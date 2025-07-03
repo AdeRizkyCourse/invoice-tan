@@ -80,7 +80,7 @@ class InvoicesController extends Controller
         $title = 'Invoice';
         $data = invoices::with('client', 'user', 'items')->find($id);
         $clients = Clients::all(); 
-        $users = users::all();
+        $users = User::all();
 
         return view('invoice.edit', compact('data', 'title', 'clients', 'users'));
     }
